@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import Smurf from "./Smurf";
+import SmurfForm from "./SmurfForm";
 import { fetchSmurfs } from "../actions";
 import { connect } from "react-redux";
 
@@ -13,15 +14,18 @@ const App = props => {
   const { smurfs } = props;
   return (
     <div className="App">
-      {smurfs.map(smurf => (
-        <Smurf
-          key={smurf.id}
-          id={smurf.id}
-          name={smurf.name}
-          age={smurf.age}
-          height={smurf.height}
-        />
-      ))}
+      <SmurfForm />
+      <div className="smurf-list">
+        {smurfs.map(smurf => (
+          <Smurf
+            key={smurf.id}
+            id={smurf.id}
+            name={smurf.name}
+            age={smurf.age}
+            height={smurf.height}
+          />
+        ))}
+      </div>
     </div>
   );
 };
