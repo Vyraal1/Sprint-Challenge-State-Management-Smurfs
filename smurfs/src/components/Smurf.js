@@ -1,7 +1,15 @@
 import React from "react";
 
 const Smurf = props => {
-  return <div className="smurf-card">Smurf isn't a real word anymore.</div>;
+  const { name, age, height, id } = props;
+  return (
+    <div className="smurf-card">
+      <h2>{name}</h2>
+      <p>{age}</p>
+      <p>{height}</p>
+      <p>{id}</p>
+    </div>
+  );
 };
 
 export default Smurf;

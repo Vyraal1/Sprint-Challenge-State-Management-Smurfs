@@ -5,10 +5,17 @@ import Smurf from "./Smurf";
 import { connect } from "react-redux";
 
 const App = props => {
-  console.log(props);
+  const { smurfs } = props;
   return (
     <div className="App">
-      <Smurf />
+      {smurfs.map(smurf => (
+        <Smurf
+          id={smurf.id}
+          name={smurf.name}
+          age={smurf.age}
+          height={smurf.height}
+        />
+      ))}
     </div>
   );
 };
