@@ -1,4 +1,9 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from "../actions";
+import {
+  START_FETCHING,
+  FETCH_SUCCESS,
+  FETCH_FAILURE,
+  POST_SUCCESS
+} from "../actions";
 
 const initialState = {
   smurfs: [
@@ -34,6 +39,8 @@ const reducer = (state = initialState, action) => {
     case FETCH_FAILURE:
       console.log("if you see this, the sprint went horribly wrong");
       return state;
+    case POST_SUCCESS:
+      return { ...state, smurfs: action.payload };
     default:
       return state;
   }
